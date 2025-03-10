@@ -47,9 +47,13 @@ class SendDailyReport extends Command
      */
     public function handle()
     {
-        // Assuming PaymentService has a method to send daily report
-        $this->paymentService->sendDailyReport();
-        $this->info('Daily report sent successfully!');
+        try {
+            $this->paymentService->sendDailyReport();
+            $this->info('Daily report sent successfully!');
+        } catch (\Exception $e) {
+            $this->error('Failed to send daily report: ' . $e->getMessage());
+            return 1;
+        }
         return 0;
     }
 }
