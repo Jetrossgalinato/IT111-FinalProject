@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Services\ReportService;
+use App\Services\PaymentService;
 
 class SendDailyReport extends Command
 {
@@ -22,22 +22,22 @@ class SendDailyReport extends Command
     protected $description = 'Send daily report email to users';
 
     /**
-     * The ReportService instance.
+     * The PaymentService instance.
      *
-     * @var \App\Services\ReportService
+     * @var \App\Services\PaymentService
      */
-    protected $reportService;
+    protected $paymentService;
 
     /**
      * Create a new command instance.
      *
-     * @param \App\Services\ReportService $reportService
+     * @param \App\Services\PaymentService $paymentService
      * @return void
      */
-    public function __construct(ReportService $reportService)
+    public function __construct(PaymentService $paymentService)
     {
         parent::__construct();
-        $this->reportService = $reportService;
+        $this->paymentService = $paymentService;
     }
 
     /**
@@ -47,7 +47,8 @@ class SendDailyReport extends Command
      */
     public function handle()
     {
-        $this->reportService->sendDailyReport();
+        // Assuming PaymentService has a method to send daily report
+        $this->paymentService->sendDailyReport();
         $this->info('Daily report sent successfully!');
         return 0;
     }
