@@ -1,5 +1,5 @@
 <?php
-
+//kernel.php is working properly
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
