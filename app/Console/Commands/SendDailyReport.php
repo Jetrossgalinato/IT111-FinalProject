@@ -1,5 +1,5 @@
 <?php
-
+//SendDailyReport is working properly
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
