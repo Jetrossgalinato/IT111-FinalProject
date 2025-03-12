@@ -52,22 +52,22 @@ class MealPlanController extends Controller
      * Display the specified meal plan.
      *
      * @param  \App\Models\MealPlan  $mealPlan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function show(MealPlan $mealPlan)
     {
-        return view('mealPlans.show', compact('mealPlan'));
+        return response()->view('mealPlans.show', compact('mealPlan'));
     }
 
     /**
      * Show the form for editing the specified meal plan.
      *
      * @param  \App\Models\MealPlan  $mealPlan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function edit(MealPlan $mealPlan)
     {
-        return view('mealPlans.edit', compact('mealPlan'));
+        return response()->view('mealPlans.edit', compact('mealPlan'));
     }
 
     /**
@@ -75,7 +75,7 @@ class MealPlanController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\MealPlan  $mealPlan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, MealPlan $mealPlan)
     {
@@ -95,7 +95,7 @@ class MealPlanController extends Controller
      * Remove the specified meal plan from storage.
      *
      * @param  \App\Models\MealPlan  $mealPlan
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function destroy(MealPlan $mealPlan)
     {
