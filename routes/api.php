@@ -1,9 +1,11 @@
+<?php
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Api\MealPlanController;
-use App\Http\Controllers\Api\SubscriptionController;
-use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MealPlanController;
+use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,7 @@ use App\Http\Controllers\Api\OrderController;
 
 // Authenticated user route
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-return $request->user();
+    return $request->user();
 });
 
 // Public routes
@@ -27,15 +29,15 @@ Route::post('/login', [UserController::class, 'login']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
-// Meal Plans
-Route::apiResource('meal-plans', MealPlanController::class);
+    // Meal Plans
+    Route::apiResource('meal-plans', MealPlanController::class);
 
-// Subscriptions
-Route::apiResource('subscriptions', SubscriptionController::class);
+    // Subscriptions
+    Route::apiResource('subscriptions', SubscriptionController::class);
 
-// Orders
-Route::apiResource('orders', OrderController::class);
+    // Orders
+    Route::apiResource('orders', OrderController::class);
 
-// Stripe Webhook
-Route::post('/stripe/webhook', [SubscriptionController::class, 'handleStripeWebhook']);
+    // Stripe Webhook
+    Route::post('/stripe/webhook', [SubscriptionController::class, 'handleStripeWebhook']);
 });
