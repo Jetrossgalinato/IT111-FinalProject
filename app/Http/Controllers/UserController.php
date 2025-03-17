@@ -53,7 +53,7 @@ class UserController extends Controller
             ]);
         }
 
-        $user = Auth::user();
+        $user = User::where('email', $request->email)->first();
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json(['message' => 'User logged in successfully', 'token' => $token, 'user' => $user]);
