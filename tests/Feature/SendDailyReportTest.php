@@ -1,8 +1,7 @@
 <?php
-// filepath: c:\Users\USER\Herd\IT111-fp\tests\Unit\SendDailyReportTest.php
 
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Support\Facades\Artisan;
