@@ -26,3 +26,6 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
+// Echo a message indicating that Laravel is running
+echo "Laravel is running.";
