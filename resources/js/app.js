@@ -6,6 +6,7 @@
 
 import "./bootstrap";
 import { createApp } from "vue";
+import Index from "../views/frontend/index.vue";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -13,7 +14,7 @@ import { createApp } from "vue";
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp({});
+const app = createApp(Index);
 
 // Example component registration
 import ExampleComponent from "./components/ExampleComponent.vue";
