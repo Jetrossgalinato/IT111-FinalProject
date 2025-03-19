@@ -6,7 +6,8 @@
 
 import "./bootstrap";
 import { createApp } from "vue";
-import Index from "../views/frontend/index.vue";
+import App from "./App.vue";
+import router from "../js/router/index";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -14,7 +15,7 @@ import Index from "../views/frontend/index.vue";
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp(Index);
+const app = createApp(App).use(router);
 
 // Example component registration
 import ExampleComponent from "./components/ExampleComponent.vue";
