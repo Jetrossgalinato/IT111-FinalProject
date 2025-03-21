@@ -1,4 +1,5 @@
 // vite.config.js
+//need to change laravel version
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
